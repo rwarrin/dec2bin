@@ -11,6 +11,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <stdlib.h>
 
 // Find the largest multiple of two that goes into a number
 // Takes a number to get multiple of.
@@ -26,5 +27,15 @@ int main(int argc, char *argv[]) {
 
 // Get largest multiple of two for a number
 int GetLargestMultipleOfTwo(int number) {
+    int multiple = 1;
+    bool found = false;
 
+    while(!found) {
+        if(multiple * 2 <= number) 
+            multiple *= 2;
+        else
+            found = true;
+    }
+
+    return multiple;
 }
